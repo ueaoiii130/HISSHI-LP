@@ -1,0 +1,413 @@
+*{
+/*    width: 100%;*/
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', "Arial", 'Montserrat',"游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",sans-serif;
+    background-color: #fff;
+/*    text-align: center;*/
+    box-sizing : border-box;
+}
+
+header{
+    position: relative;
+    text-align: center;
+}
+
+p{
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+    letter-spacing: 0.5em;
+}
+
+
+#scroll span {
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+#scroll span::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+#scroll-txt{
+    position: absolute;
+    top: 96%;
+}
+
+.box{
+    height: 100vh;
+}
+
+.title{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    
+}
+.title h1{
+    color: #fff;
+    font-size: 42px;
+    position: absolute;
+    top: 50%;
+    left: 51.4%;
+    -ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+    letter-spacing: 0.64em;
+    text-align: center;
+    z-index: 2;
+
+}
+
+video {
+ 
+    background-attachment: fixed; 
+      background-position: center center; 
+      background-size: cover; 
+      left: 0;
+      min-height: 100%;
+      min-height: 100vh;
+      min-width: 100%;
+      min-width: 100vw;
+      position: absolute;
+      top: 0;
+      z-index: ;
+}
+
+
+.fuwatAnime {
+     -webkit-animation-fill-mode:both;
+     -ms-animation-fill-mode:both;
+     animation-fill-mode:both;
+     -webkit-animation-duration:1.5s;
+     -ms-animation-duration:1.5s;
+     animation-duration:1.5s;
+     -webkit-animation-name: fuwatAnime;
+     -ms-animation-name: fuwatAnime;
+     animation-name: fuwatAnime;
+     visibility: visible !important;
+}
+@-webkit-keyframes fuwatAnime {
+     0% { opacity: 0; -webkit-transform: translateY(-20px); }
+     100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fuwatAnime {
+     0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+     100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+
+
+.about{
+    text-align: center;
+    position: relative;
+    padding: 220px 0;
+    background-color: #fff;
+}
+.about img{
+    width: 80%;
+    padding-top: 280px;
+    opacity: 0.08; 
+}
+.about p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 128px;
+    letter-spacing: 0.6em;
+}
+
+h2{
+    color: #4A4A4A;
+    font-size: 42px;
+    letter-spacing: 0.5em;
+/*    text-align: center;*/
+}
+
+.story{
+    padding: 340px 0;
+    position: relative;
+/*    background-color: #fff;*/
+}
+
+.story h2{
+    padding-left: 40px;
+/*    color: #ddd;*/
+}
+.story p{
+/*    color: #fff;*/
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 60px;
+    letter-spacing: 0.5em;
+}
+
+
+
+.line-up{
+    padding-top: 100px;
+    background-color: #fff;
+}
+.line-up h2{
+    text-align: center;
+}
+.line-up p{
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    font-weight: normal;
+    text-align: center;
+}
+#sz-link a{
+    color: #999;
+    font-size: 0.4em;
+    padding-top: 500px;
+    text-align: center;
+}
+#sz-link a:hover{
+    color: #000;
+}
+
+.new-arrival{
+    padding-top: 40px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.new-arrival img{
+    width: 540px;
+}
+.new-arrival p{
+    margin-top: -2em;
+}
+
+
+
+.gallery{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 352px;
+}
+
+
+.gallery p{
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    font-weight: normal;
+}
+
+.gallery-item{
+    width: 320px;
+    text-align: center;
+    display: inline;
+    float: left;
+}
+
+.gallery-item img{
+    width: 320px;
+}
+
+.gallery-item:after{
+    content: ".";
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+    animation: infinite;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.clear{
+    clear: both;
+}
+
+.grid{
+    padding-top: 340px;
+    width: 100%;
+    margin: 0 auto;
+/*    width: 1000px;*/
+}
+.grid img{
+    width: 100%;
+} 
+.grid-item { 
+    margin: 20px 0;
+    width: 32%; 
+    float: left;
+}
+.grid-item2 {
+    margin: 40px 0 0 0;
+    width: 32%; 
+    float: right;
+}
+
+.grid-item3 {
+    margin: 60px 360px 40px 0;
+    width: 36%; 
+    float: right;
+    
+}
+.grid-item4 {
+    margin: 40px;
+    width: 20%; 
+    float: right;
+}
+.grid-item5 {
+    margin: 40px;
+    width: 30%; 
+    float: right;
+}
+
+footer{
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.4em;
+    padding: 60px 0;
+    opacity: 0.5;
+}
+
+
+@media screen and (max-width: 750px) { 
+                *{
+                    padding: 0;
+                    margin: 0;
+                }
+                .body {
+                    max-width: 100vh;
+                    margin: 0 auto;
+                    font-size: 12px;
+                 }
+    
+                .title h1{
+                    padding: 0;
+                    color: #fff;
+                    font-size: 1.2em;
+                    position: absolute;
+                    top: 50%;
+                    left: 51.4%;
+                    -ms-transform: translate(-50%,-50%);
+                    -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+                    letter-spacing: 0.64em;
+                    z-index: 2;
+                }
+    
+                .about p{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -ms-transform: translate(-50%,-50%);
+                    -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    line-height: 3.2em;
+                    letter-spacing: 0.6em;
+                }
+                #scroll-txt{
+                    position: absolute;
+                    top: 92%;
+                    font-size: 0.4em;
+                    text-align: center;
+                }
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    position: absolute;
+                    top: 82%;
+                    left: 50%;
+                    -ms-transform: translate(-50%,-50%);
+                    -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+                    letter-spacing: 0.5em;
+                }
+                .about{
+                    position: relative;
+                    padding-top: 40px;
+                }
+                .about img{
+                    width: 60%;
+                    position: absolute;
+                    top: 40%;
+                    left: 40%;
+                    opacity: 0.08; 
+                }
+
+          }

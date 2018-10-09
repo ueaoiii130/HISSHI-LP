@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>＃必死に生きてる</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  scrollify  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1/jquery.scrollify.min.js"></script>
+    <!--  pinterestみたいなレイアウト  -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <script>
+        
+        
+        $(function(){
+            // T-shirts GURUGURU
+            $('.gallery').each(function(){
+            var loopsliderWidth = $(this).width();
+            var loopsliderHeight = $(this).height();
+            $(this).children('div').wrapAll('<div id="gallery_wrap"></div>');
+
+            var listWidth = $('#gallery_wrap').children('div').width();
+            var listCount = $('#gallery_wrap').children('div').length;
+                
+            //画像の初期位置
+            var posX = 0;
+                
+            var loopWidth = (listWidth);
+            var scrollSpeed = 1;
+
+            $('#gallery_wrap').css({
+                top: '0',
+                left: '0',
+                width: ((loopWidth)*24),
+                height: (loopsliderHeight),
+                overflow: 'hidden',
+                position: 'absolute'
+            });
+
+            $('#gallery_wrap div').css({
+                width: (loopWidth)
+            });
+            loopsliderPosition();
+                
+            
+
+            function loopsliderPosition(){
+                $('#gallery_wrap').css({left:'0'});
+                $('#gallery_wrap').stop().animate({left:'-' + (loopWidth) + 'px'},10000,'linear');
+                 //ループ処理
+
+                setTimeout(function(){
+                    loopsliderPosition();
+                    if (posX >= loopWidth) posX= 0;
+                    posX += scrollSpeed;
+//                    $('#gallery_wrap').css("loopsliderPosition",posX+"px 0px");
+                },10000);
+            };
+                
+                
+//                function loopsliderPosition(){
+//                $('#gallery_wrap').css({left:'0'});
+//                $('#gallery_wrap').stop().animate({left:'-' + (loopWidth) + 'px'},10000,'linear');
+//                setTimeout(function(){
+//                    loopsliderPosition();
+//                },10000);
+//            };
+
+            $('#gallery_wrap div').clone().appendTo('#gallery_wrap');
+        });
+
+    // セクションごとのスクロール
+    var option = {
+      section : '.box',
+      easing: "swing",
+      scrollSpeed: 600,
+      scrollbars: true,
+    };
+    $(function() {
+        $.scrollify(option); // scrollifyの実行
+    });
+});
+        
+    // ふわっと現れる
+    $(document).ready(function(){
+      $('.fuwat').css('visibility','hidden');
+      $(window).scroll(function(){
+       var windowHeight = $(window).height(),
+           topWindow = $(window).scrollTop();
+       $('.fuwat').each(function(){
+        var objectPosition = $(this).offset().top;
+        if(topWindow > objectPosition - windowHeight + 400){
+         $(this).addClass("fuwatAnime");
+        }
+       });
+      });
+    });
+
+       // pinterest-grid 
+    $('.grid').masonry({
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 800
+    });
+
+    </script>
+
+    <!--  OGP設定 -->
+    <meta property="og:title" content="HISSHI NI IKITERU LP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="/img/hisshi-tegaki-kuro.png" />
+    <meta property="og:site_name" content="HISSHI NI IKITERU LP" />
+    <meta property="og:description" content="HISSHI NI IKITERU LP" />
+
+    <!-- Facebook用設定 -->
+    <!--<meta property="fb:app_id" content="App-ID（15文字の半角数字）" />-->
+    <!--もしくは-->
+    <!--<meta property="fb:admins" content="adminID（15文字の半角数字）" />-->
+
+    <!-- Twitter共通設定 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/img/hisshi-tegaki-kuro.png" />
+    <meta name="twitter:creator" content="@ueaoiii130">
+
+    <link rel="shortcut icon" href="/img/hisshi-icon.png">
+    <link rel="apple-touch-icon" href="/img/hisshi-icon.png">
+
+    <!--レスポンシブ-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+<body>
+    <header>
+       
+        <div class="box title">
+            <h1>#必死に生きてる</h1>
+            <!--  背景movie  -->
+            <video src="HISSHI-promo.mp4" autoplay loop><img src="/img/Funzin.png" alt="HISSHI-ENGINNER"></video>
+            
+        <!-- <video src="HISSHI-promo.mp4" poster="/img/Funzin.png" autoplay loop></video>-->
+
+        </div>
+            <!-- スクロール  -->
+            <a href="#about" id="scroll"><span></span></a>
+            <a href="#about" id="scroll-txt">Scroll</a>
+    </header>
+
+    <div class="news">
+
+    </div>
+    
+    <div class="box">
+    <div class="about fuwat" id="about">
+
+        <img src="/img/hisshi-tegaki-kuro.png" alt="hisshi-kuro">
+
+        <p>単位が取れなくて留年ギリギリの君も<br>
+        いつも締め切りに追われている君も<br>
+        出し抜いていきたい君も<br>
+        今日もみんな、<br>
+        ＃必死に生きてる</p>
+
+    </div>
+
+    
+
+    <div class="story fuwat">
+        <h2>STORY</h2>
+
+        <p>
+            友人同士で卒業記念に行ったスキー旅行。<br>
+
+            極寒のゲレンデ。<br>
+
+            暖かさを求めて入ったフードコートで、<br>
+
+            ラーメンを食べるエンディニアの姿から、<br>
+
+            ＃必死に生きてる<br>
+
+            は生まれました。<br>
+        </p>
+
+    </div>　<!--  story  -->
+    </div>　<!--  ABOUTとSTORYのbox  -->
+    
+
+    
+    <div class="line-up fuwat">
+       
+        <h2>LINE UP</h2>
+        <div class="new-arrival">
+            <img src="/img/hisshi-t-shiro.png" alt="必死T-shirts">
+            <p>必死T - white ver.</p>
+        </div>
+        <div class="gallery clearfix">
+          
+           <div class="gallery-item">
+               <img src="/img/hisshi-long-shiro.png" alt="必死T-shirts">
+               <p>必死T - white ver.</p>
+           </div>
+
+           <div class="gallery-item">
+               <img src="/img/hisshi-long-kuro.png" alt="必死T-shirts">
+               <p>必死T - white ver.</p>
+           </div>
+
+           <div class="gallery-item">
+               <img src="/img/hisshi-t-kuro.png" alt="必死T-shirts">
+               <p>必死T - white ver.</p>
+           </div>
+
+           <div class="gallery-item">
+               <img src="/img/hisshi-t-haiiro.jpg" alt="必死T-shirts">
+               <p>必死T - white ver.</p>
+           </div>
+           
+
+        </div> <!-- gallery -->
+        <span id="sz-link" >
+        <a href="https://suzuri.jp/ueaoiii130" target="_blank"><p>必死TはSUSURIでGETできるよ</p></a>
+        </span>
+    
+    </div>　<!-- line-up -->
+
+    <div class=" grid clear">
+       <div class="fuwat grid-item">
+           <img src="/img/hisshi_chari.jpg" alt="HISSHI-snap ちゃりちゃり">
+       </div>
+        <div class="fuwat grid-item2">
+            <img src="/img/HISSHI-rikako.jpg" alt="">
+        </div>
+        <div class="fuwat grid-item3">
+            <img src="/img/HISSHI-ryujin.jpg" alt="">
+        
+        </div>
+       <div class="fuwat grid-item4">
+            <img src="/img/hisshi-funzin.jpg" alt="">
+       </div>
+       <div class="fuwat grid-item5">
+            <img src="/img/hisshi_twin.jpg" alt="">
+       </div>
+       
+        
+        
+        
+    </div>
+
+
+<footer class="clear">
+ ©️ HISSHI NI IKITERU 2018
+</footer>
+
+
+
+</body>
+</html>
