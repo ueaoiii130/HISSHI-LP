@@ -14,35 +14,7 @@
 
     <script>
 
-
-        // loading
-//            $(function(){
-//             //ローディングエリアを取得
-//             var loading = $("#loading");
-//             //ローディングエリアを隠す処理
-//             var isHidden = function(){
-//              loading.fadeOut(5000); //1000ミリ秒かけてフェードアウト
-//             };
-//             //1000ミリ秒後にloadingFunc開始
-//             setTimeout(isHidden,5000);
-//            });
-
-
-
-        $(function() {
-//            var h = $(window).height(); //ブラウザウィンドウの高さを取得
-            $('.title').css('display','none'); //初期状態ではメインコンテンツを非表示
-            $('.loading').height(h).css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
-        });
-        $(window).load(function () {
-            $('.loading').delay(900).fadeOut(800); //$('#loader-bg').fadeOut(800);でも可
-//            $('#loader').delay(600).fadeOut(300); //$('#loader').fadeOut(300);でも可
-            $('.title').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
-        });
-
-
-
-
+      
         $(function(){
             // T-shirts GURUGURU
             $('.gallery').each(function(){
@@ -87,15 +59,6 @@
 //                    $('#gallery_wrap').css("loopsliderPosition",posX+"px 0px");
                 },10000);
             };
-
-
-//                function loopsliderPosition(){
-//                $('#gallery_wrap').css({left:'0'});
-//                $('#gallery_wrap').stop().animate({left:'-' + (loopWidth) + 'px'},10000,'linear');
-//                setTimeout(function(){
-//                    loopsliderPosition();
-//                },10000);
-//            };
 
             $('#gallery_wrap div').clone().appendTo('#gallery_wrap');
         });
@@ -170,9 +133,9 @@
 <body>
     <header>
 
-      <div class="loading-bg">
-       </div>
-        <div class="box title">
+    <div class="loading-bg">
+    </div>
+        <div class="title box">
             <h1>#必死に生きてる</h1>
             <!--  背景movie  -->
             <video src="HISSHI-promo.mp4" autoplay loop><img src="/img/Funzin.png" alt="HISSHI-ENGINNER"></video>
@@ -185,9 +148,6 @@
             <a href="#about" id="scroll-txt">Scroll</a>
     </header>
 
-    <div class="news">
-
-    </div>
 
     <div class="box">
     <div class="about fuwat" id="about">
