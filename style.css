@@ -186,12 +186,12 @@ video {
 }
 .about img{
     width: 80%;
-    padding-top: 280px;
+    padding-top: 10vh;
     opacity: 0.08;
 }
 .about p{
     position: absolute;
-    top: 50%;
+    top: 60vh;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
 	-webkit-transform: translate(-50%,-50%);
