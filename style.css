@@ -17,6 +17,27 @@ header{
     text-align: center;
 }
 
+.loading-bg{
+    background-color: #999;
+    background: 0 0 no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /*  width: 100vw;*/
+     z-index: 100;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+　
+}
+.loading {
+
+
+}
+
+
+
 p{
     font-weight: bold;
 }
@@ -108,7 +129,7 @@ a{
     width: 100%;
     height: 100%;
     height: 100vh;
-    
+
 }
 .title h1{
     color: #fff;
@@ -126,10 +147,10 @@ a{
 }
 
 video {
- 
-    background-attachment: fixed; 
-      background-position: center center; 
-      background-size: cover; 
+
+    background-attachment: fixed;
+      background-position: center center;
+      background-size: cover;
       left: 0;
       min-height: 100%;
       min-height: 100vh;
@@ -172,7 +193,7 @@ video {
 .about img{
     width: 80%;
     padding-top: 280px;
-    opacity: 0.08; 
+    opacity: 0.08;
 }
 .about p{
     position: absolute;
@@ -305,32 +326,32 @@ h2{
 }
 .grid img{
     width: 100%;
-} 
-.grid-item { 
+}
+.grid-item {
     margin: 20px 0;
-    width: 32%; 
+    width: 32%;
     float: left;
 }
 .grid-item2 {
     margin: 40px 0 0 0;
-    width: 32%; 
+    width: 32%;
     float: right;
 }
 
 .grid-item3 {
     margin: 60px 360px 40px 0;
-    width: 36%; 
+    width: 36%;
     float: right;
-    
+
 }
 .grid-item4 {
     margin: 40px;
-    width: 20%; 
+    width: 20%;
     float: right;
 }
 .grid-item5 {
     margin: 40px;
-    width: 30%; 
+    width: 30%;
     float: right;
 }
 
@@ -344,7 +365,7 @@ footer{
 }
 
 
-@media screen and (max-width: 750px) { 
+@media screen and (max-width: 750px) {
                 *{
                     padding: 0;
                     margin: 0;
@@ -354,7 +375,7 @@ footer{
                     margin: 0 auto;
                     font-size: 12px;
                  }
-    
+
                 .title h1{
                     padding: 0;
                     color: #fff;
@@ -368,7 +389,7 @@ footer{
                     letter-spacing: 0.64em;
                     z-index: 2;
                 }
-    
+
                 .about p{
                     position: absolute;
                     top: 50%;
@@ -407,7 +428,7 @@ footer{
                     position: absolute;
                     top: 40%;
                     left: 40%;
-                    opacity: 0.08; 
+                    opacity: 0.08;
                 }
 
           }

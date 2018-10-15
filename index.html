@@ -5,6 +5,7 @@
     <title>＃必死に生きてる</title>
 
     <link rel="stylesheet" href="style.css">
+    <!--  jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--  scrollify  -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1/jquery.scrollify.min.js"></script>
@@ -12,8 +13,36 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <script>
-        
-        
+
+
+        // loading
+//            $(function(){
+//             //ローディングエリアを取得
+//             var loading = $("#loading");
+//             //ローディングエリアを隠す処理
+//             var isHidden = function(){
+//              loading.fadeOut(5000); //1000ミリ秒かけてフェードアウト
+//             };
+//             //1000ミリ秒後にloadingFunc開始
+//             setTimeout(isHidden,5000);
+//            });
+
+
+
+        $(function() {
+//            var h = $(window).height(); //ブラウザウィンドウの高さを取得
+            $('.title').css('display','none'); //初期状態ではメインコンテンツを非表示
+            $('.loading').height(h).css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
+        });
+        $(window).load(function () {
+            $('.loading').delay(900).fadeOut(800); //$('#loader-bg').fadeOut(800);でも可
+//            $('#loader').delay(600).fadeOut(300); //$('#loader').fadeOut(300);でも可
+            $('.title').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
+        });
+
+
+
+
         $(function(){
             // T-shirts GURUGURU
             $('.gallery').each(function(){
@@ -23,10 +52,10 @@
 
             var listWidth = $('#gallery_wrap').children('div').width();
             var listCount = $('#gallery_wrap').children('div').length;
-                
+
             //画像の初期位置
             var posX = 0;
-                
+
             var loopWidth = (listWidth);
             var scrollSpeed = 1;
 
@@ -43,8 +72,8 @@
                 width: (loopWidth)
             });
             loopsliderPosition();
-                
-            
+
+
 
             function loopsliderPosition(){
                 $('#gallery_wrap').css({left:'0'});
@@ -58,8 +87,8 @@
 //                    $('#gallery_wrap').css("loopsliderPosition",posX+"px 0px");
                 },10000);
             };
-                
-                
+
+
 //                function loopsliderPosition(){
 //                $('#gallery_wrap').css({left:'0'});
 //                $('#gallery_wrap').stop().animate({left:'-' + (loopWidth) + 'px'},10000,'linear');
@@ -82,7 +111,7 @@
         $.scrollify(option); // scrollifyの実行
     });
 });
-        
+
     // ふわっと現れる
     $(document).ready(function(){
       $('.fuwat').css('visibility','hidden');
@@ -98,12 +127,16 @@
       });
     });
 
-       // pinterest-grid 
+    // pinterest-grid
     $('.grid').masonry({
     // options
     itemSelector: '.grid-item',
     columnWidth: 800
     });
+
+
+
+
 
     </script>
 
@@ -131,15 +164,19 @@
     <!--レスポンシブ-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+
+
 </head>
 <body>
     <header>
-       
+
+      <div class="loading-bg">
+       </div>
         <div class="box title">
             <h1>#必死に生きてる</h1>
             <!--  背景movie  -->
             <video src="HISSHI-promo.mp4" autoplay loop><img src="/img/Funzin.png" alt="HISSHI-ENGINNER"></video>
-            
+
         <!-- <video src="HISSHI-promo.mp4" poster="/img/Funzin.png" autoplay loop></video>-->
 
         </div>
@@ -151,21 +188,21 @@
     <div class="news">
 
     </div>
-    
+
     <div class="box">
     <div class="about fuwat" id="about">
 
         <img src="/img/hisshi-tegaki-kuro.png" alt="hisshi-kuro">
-
+<div class="about-txt">
         <p>単位が取れなくて留年ギリギリの君も<br>
         いつも締め切りに追われている君も<br>
         出し抜いていきたい君も<br>
         今日もみんな、<br>
         ＃必死に生きてる</p>
-
+</div>
     </div>
 
-    
+
 
     <div class="story fuwat">
         <h2>STORY</h2>
@@ -186,44 +223,44 @@
 
     </div>　<!--  story  -->
     </div>　<!--  ABOUTとSTORYのbox  -->
-    
 
-    
+
+
     <div class="line-up fuwat">
-       
+
         <h2>LINE UP</h2>
         <div class="new-arrival">
             <img src="/img/hisshi-t-shiro.png" alt="必死T-shirts">
             <p>必死T - white ver.</p>
         </div>
         <div class="gallery clearfix">
-          
+
            <div class="gallery-item">
                <img src="/img/hisshi-long-shiro.png" alt="必死T-shirts">
-               <p>必死T - white ver.</p>
+               <p>必死ロンT - white ver.</p>
            </div>
 
            <div class="gallery-item">
                <img src="/img/hisshi-long-kuro.png" alt="必死T-shirts">
-               <p>必死T - white ver.</p>
+               <p>必死ロンT - black ver.</p>
            </div>
 
            <div class="gallery-item">
                <img src="/img/hisshi-t-kuro.png" alt="必死T-shirts">
-               <p>必死T - white ver.</p>
+               <p>必死T - black ver.</p>
            </div>
 
            <div class="gallery-item">
                <img src="/img/hisshi-t-haiiro.jpg" alt="必死T-shirts">
-               <p>必死T - white ver.</p>
+               <p>必死T - gray ver.</p>
            </div>
-           
+
 
         </div> <!-- gallery -->
         <span id="sz-link" >
         <a href="https://suzuri.jp/ueaoiii130" target="_blank"><p>必死TはSUSURIでGETできるよ</p></a>
         </span>
-    
+
     </div>　<!-- line-up -->
 
     <div class=" grid clear">
@@ -235,7 +272,7 @@
         </div>
         <div class="fuwat grid-item3">
             <img src="/img/HISSHI-ryujin.jpg" alt="">
-        
+
         </div>
        <div class="fuwat grid-item4">
             <img src="/img/hisshi-funzin.jpg" alt="">
@@ -243,10 +280,10 @@
        <div class="fuwat grid-item5">
             <img src="/img/hisshi_twin.jpg" alt="">
        </div>
-       
-        
-        
-        
+
+
+
+
     </div>
 
 
