@@ -62,6 +62,19 @@
 
             $('#gallery_wrap div').clone().appendTo('#gallery_wrap');
         });
+            
+            //ローディング実装したい
+            $(function() {
+                var h = $(window).height(); //ブラウザウィンドウの高さを取得
+                $('#main-contents').css('display','none'); //初期状態ではメインコンテンツを非表示
+                $('#loader-bg ,#loader').height(h).css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
+                });
+            
+                $(window).load(function () {
+                $('#loader-bg').delay(900).fadeOut(800); //$('#loader-bg').fadeOut(800);でも可
+                $('#loader').delay(600).fadeOut(300); //$('#loader').fadeOut(300);でも可
+                $('#main-contents').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
+                });
 
     // セクションごとのスクロール
     var option = {
@@ -131,12 +144,18 @@
 
 </head>
 <body>
-    <header>
-
-    <div class="loading-bg">
+   <div id="loader-bg">
+        <div id="loader">
+<!--            <h1 data-content="＃必死に生きてる">＃必死に生きてる</h1>-->
+           <img src="img/15.gif">
+           <h1>＃必死に生きてる</h1>
+        </div>
     </div>
+    <div id="main-contents">
+    <header>
+       
         <div class="title box">
-            <h1>#必死に生きてる</h1>
+            <h1>＃必死に生きてる</h1>
             <!--  背景movie  -->
             <video src="HISSHI-promo.mp4" autoplay loop><img src="/img/Funzin.png" alt="HISSHI-ENGINNER"></video>
 
@@ -246,7 +265,7 @@
 
     </div>
 
-
+</div>
 <footer class="clear">
  ©️ HISSHI NI IKITERU 2018
 </footer>

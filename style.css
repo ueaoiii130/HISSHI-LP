@@ -17,24 +17,11 @@ header{
     display: block;
 }
 
-/*
-.loading-bg{
-    background-color: #999;
-    background: 0 0 no-repeat;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    width: 100vw;
-     z-index: 100;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-}
-*/
+
 p{
     font-weight: bold;
 }
+
 
 a{
     text-decoration: none;
@@ -47,6 +34,46 @@ a{
 	transform: translate(-50%,-50%);
     letter-spacing: 0.5em;
 }
+
+@keyframes loading {
+	from { max-width: 0; }
+}
+
+#loader{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+}
+#loader img{
+   width: 200px;
+}
+#loader-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    z-index: 1;
+}
+
+
+/*
+.loading h1{
+    position: absolute;
+	left: 50%;
+	margin-left: -1.9em;
+	color: hsla(0,0%,100%,.3);
+}
+.loading h1:before {
+	content: attr(data-content);
+	position: absolute;
+	overflow: hidden;
+	max-width: 4em;
+	color: white;
+	animation: loading 10s linear;
+}
+*/
 
 
 #scroll span {
