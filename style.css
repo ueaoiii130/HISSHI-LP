@@ -56,24 +56,6 @@ a{
 }
 
 
-/*
-.loading h1{
-    position: absolute;
-	left: 50%;
-	margin-left: -1.9em;
-	color: hsla(0,0%,100%,.3);
-}
-.loading h1:before {
-	content: attr(data-content);
-	position: absolute;
-	overflow: hidden;
-	max-width: 4em;
-	color: white;
-	animation: loading 10s linear;
-}
-*/
-
-
 #scroll span {
   position: absolute;
   top: 88%;

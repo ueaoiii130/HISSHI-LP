@@ -12,109 +12,99 @@
     <!--  pinterestみたいなレイアウト  -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-    <script>
+   <script>
+    //ローディング実装したい
+      var h = $(window).height(); //ブラウザウィンドウの高さを取得
+      $('#main-contents').css('display', 'none'); //初期状態ではメインコンテンツを非表示
+      $('#loader-bg ,#loader').height(h).css('display', 'block'); //ウィンドウの高さに合わせでローディング画面を表示
 
-      
-        $(function(){
-            // T-shirts GURUGURU
-            $('.gallery').each(function(){
-            var loopsliderWidth = $(this).width();
-            var loopsliderHeight = $(this).height();
-            $(this).children('div').wrapAll('<div id="gallery_wrap"></div>');
-
-            var listWidth = $('#gallery_wrap').children('div').width();
-            var listCount = $('#gallery_wrap').children('div').length;
-
-            //画像の初期位置
-            var posX = 0;
-
-            var loopWidth = (listWidth);
-            var scrollSpeed = 1;
-
-            $('#gallery_wrap').css({
-                top: '0',
-                left: '0',
-                width: ((loopWidth)*24),
-                height: (loopsliderHeight),
-                overflow: 'hidden',
-                position: 'absolute'
-            });
-
-            $('#gallery_wrap div').css({
-                width: (loopWidth)
-            });
-            loopsliderPosition();
-
-
-
-            function loopsliderPosition(){
-                $('#gallery_wrap').css({left:'0'});
-                $('#gallery_wrap').stop().animate({left:'-' + (loopWidth) + 'px'},10000,'linear');
-                 //ループ処理
-
-                setTimeout(function(){
-                    loopsliderPosition();
-                    if (posX >= loopWidth) posX= 0;
-                    posX += scrollSpeed;
-//                    $('#gallery_wrap').css("loopsliderPosition",posX+"px 0px");
-                },10000);
-            };
-
-            $('#gallery_wrap div').clone().appendTo('#gallery_wrap');
-        });
-            
-            //ローディング実装したい
-            $(function() {
-                var h = $(window).height(); //ブラウザウィンドウの高さを取得
-                $('#main-contents').css('display','none'); //初期状態ではメインコンテンツを非表示
-                $('#loader-bg ,#loader').height(h).css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
-                });
-            
-                $(window).on('load', function(){
-                $('#loader-bg').delay(600).fadeOut(800); //$('#loader-bg').fadeOut(800);でも可
-                $('#loader').delay(600).fadeOut(300); //$('#loader').fadeOut(300);でも可
-                $('#main-contents').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
-                });
-
-    // セクションごとのスクロール
-    var option = {
-      section : '.box',
-      easing: "swing",
-      scrollSpeed: 600,
-      scrollbars: true,
-    };
+      $(window).on('load', function() {
+        $('#loader-bg').delay(900).fadeOut(800); //$('#loader-bg').fadeOut(800);でも可
+        $('#loader').delay(900).fadeOut(300); //$('#loader').fadeOut(300);でも可
+        $('#main-contents').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
+      });
+    
     $(function() {
-        $.scrollify(option); // scrollifyの実行
-    });
-});
+      // T-shirts GURUGURU
+      $('.gallery').each(function() {
+        var loopsliderWidth = $(this).width();
+        var loopsliderHeight = $(this).height();
+        $(this).children('div').wrapAll('<div id="gallery_wrap"></div>');
 
-    // ふわっと現れる
-    $(document).ready(function(){
-      $('.fuwat').css('visibility','hidden');
-      $(window).scroll(function(){
-       var windowHeight = $(window).height(),
-           topWindow = $(window).scrollTop();
-       $('.fuwat').each(function(){
-        var objectPosition = $(this).offset().top;
-        if(topWindow > objectPosition - windowHeight + 400){
-         $(this).addClass("fuwatAnime");
-        }
-       });
+        var listWidth = $('#gallery_wrap').children('div').width();
+        var listCount = $('#gallery_wrap').children('div').length;
+
+        //画像の初期位置
+        var posX = 0;
+
+        var loopWidth = (listWidth);
+        var scrollSpeed = 1;
+
+        $('#gallery_wrap').css({
+          top: '0',
+          left: '0',
+          width: ((loopWidth) * 24),
+          height: (loopsliderHeight),
+          overflow: 'hidden',
+          position: 'absolute'
+        });
+
+        $('#gallery_wrap div').css({
+          width: (loopWidth)
+        });
+        loopsliderPosition();
+
+
+
+        function loopsliderPosition() {
+          $('#gallery_wrap').css({
+            left: '0'
+          });
+          $('#gallery_wrap').stop().animate({
+            left: '-' + (loopWidth) + 'px'
+          }, 10000, 'linear');
+          //ループ処理
+
+          setTimeout(function() {
+            loopsliderPosition();
+            if (posX >= loopWidth) posX = 0;
+            posX += scrollSpeed;
+            //                    $('#gallery_wrap').css("loopsliderPosition",posX+"px 0px");
+          }, 10000);
+        };
+
+        $('#gallery_wrap div').clone().appendTo('#gallery_wrap');
+      });
+
+      // セクションごとのスクロール
+      var option = {
+        section: '.box',
+        easing: "swing",
+        scrollSpeed: 600,
+        scrollbars: true,
+      };
+      $(function() {
+        $.scrollify(option); // scrollifyの実行
       });
     });
 
-    // pinterest-grid
-    $('.grid').masonry({
-    // options
-    itemSelector: '.grid-item',
-    columnWidth: 800
+    // ふわっと現れる
+    $(document).ready(function() {
+      $('.fuwat').css('visibility', 'hidden');
+      $(window).scroll(function() {
+        var windowHeight = $(window).height(),
+          topWindow = $(window).scrollTop();
+        $('.fuwat').each(function() {
+          var objectPosition = $(this).offset().top;
+          if (topWindow > objectPosition - windowHeight + 400) {
+            $(this).addClass("fuwatAnime");
+          }
+        });
+      });
     });
+  </script>
+   
 
-
-
-
-
-    </script>
 
     <!--  OGP設定 -->
     <meta property="og:title" content="HISSHI NI IKITERU LP" />
@@ -146,9 +136,7 @@
 <body>
    <div id="loader-bg">
         <div id="loader">
-<!--            <h1 data-content="＃必死に生きてる">＃必死に生きてる</h1>-->
            <img src="img/15.gif">
-<!--           <h1>＃必死に生きてる</h1>-->
         </div>
     </div>
     
@@ -158,14 +146,19 @@
         <div class="title box">
             <h1>＃必死に生きてる</h1>
             <!--  背景movie  -->
+<!--
+            <video autoplay loop muted controls poster="/img/Funzin.png">
+              <source src="HISSHI-promo.mov" type="video/mp4" />
+              <img src="/img/Funzin.png" />
+            </video>
+-->
             <video src="HISSHI-promo.mp4" autoplay loop><img src="/img/Funzin.png" alt="HISSHI-ENGINNER"></video>
-
-            <!-- <video src="HISSHI-promo.mp4" poster="/img/Funzin.png" autoplay loop></video>-->
-
         </div>
+           
             <!-- スクロール  -->
             <a href="#about" id="scroll"><span></span></a>
             <a href="#about" id="scroll-txt">Scroll</a>
+            
     </header>
 
 
