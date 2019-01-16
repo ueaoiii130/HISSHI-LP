@@ -223,14 +223,14 @@ h2{
 }
 
 .story h2{
-    padding-left: 40px;
+    padding-left: 80px;
 /*    color: #ddd;*/
 }
 .story p{
 /*    color: #fff;*/
     padding-top: 40px;
-    padding-left: 40px;
-    font-size: 22px;
+    padding-left: 80px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 60px;
     letter-spacing: 0.5em;
