@@ -42,9 +42,11 @@ a{
     position: absolute;
     top: 50%;
 }
+
 #loader img{
    width: 200px;
 }
+
 #loader-bg {
     position: relative;
     width: 100%;
@@ -54,7 +56,6 @@ a{
     background: #000;
     z-index: 1;
 }
-
 
 #scroll span {
   position: absolute;
